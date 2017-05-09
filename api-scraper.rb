@@ -1,16 +1,16 @@
 require "rest-client"
 require "json"
-URL = "https://pokeapi.co/api/v1/"
+URL = "https://pokeapi.co/"
 
 def get_pokemon_info(number)
-  resp = JSON.parse(RestClient.get(URL+"pokemon/#{number}/"))
+  resp = JSON.parse(RestClient.get(URL+"api/v1/pokemon/#{number}/"))
   info = {
     name: resp["name"]
     id: resp["pkdx_id"]
     types: resp["types"]
     catch_rate: resp["catch_rate"]
 
-    base_hp: resp["hp"]
+    hp: resp["hp"]
     attack: resp["attack"]
     defense: resp["defense"]
     special_attack: resp["sp_atk"]
@@ -23,7 +23,7 @@ def get_pokemon_info(number)
   }
 
   resp["evolutions"].each do |evo|
-    info[:evolutions][evo["level"]] = evo["resource_uri"]
+    info[:evolutions][evo["level"]] = evo["resource_uri"] if evo["method"] == "level_up"
   end
   info
 end

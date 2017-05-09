@@ -1,0 +1,3 @@
+Pokemon.create()
+
+Pokemon.create()
