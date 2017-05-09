@@ -2,9 +2,11 @@ class CreatePokemons < ActiveRecord::Migration
   def change
     create_table :pokemons do |t|
       t.text :name
-      t. :types
       t.integer :catch_rate
 
+      t.integer :level
+      t.integer :experience
+      
       t.integer :hp
       t.integer :attack
       t.integer :defense
@@ -12,7 +14,6 @@ class CreatePokemons < ActiveRecord::Migration
       t.integer :special_defense
 
       t.text :growth_rate
-      t. :evolutions
       t.text :speed
       t.text :weight
     end
