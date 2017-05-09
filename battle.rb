@@ -28,7 +28,7 @@ def type(atker, defer)
         end
       when "fire"
         case d_type
-        when "grass" || "ice" || "bug"
+        when "grass", "ice", "bug"
           res << {type: "super effective", mult: 2.0}
         when "fire", "water", "rock", "dragon"
           res << {type: "not very effective", mult: 0.5}
