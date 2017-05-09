@@ -10,3 +10,9 @@ def growth_rate(pokemon)
     exp = (5 * n ** 3) / 4
   end
 end
+
+def experience_gain(atker, defer)
+  exp = l / (7 * s)
+  l = # level of fainted pokemon
+  s = # The number of Pokémon that participated in the battle and have not fainted"
+end
